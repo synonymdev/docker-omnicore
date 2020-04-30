@@ -1,10 +1,17 @@
-FROM ubuntu:18.04
+FROM debian:stable-slim as builder
 
-RUN apt-get update && \
-	apt-get install --yes software-properties-common && \
-	add-apt-repository --yes ppa:bitcoin/bitcoin && \
-	apt-get update && \
-	apt-get install --yes bitcoind
+RUN apt-get update && apt-get install -y wget
+
+RUN mkdir -p /tmp /scripts
+
+ADD install /scripts
+
+RUN /scripts/install
+
+FROM debian:stable-slim
+
+COPY --from=builder /bitcoind /usr/bin/bitcoind
+COPY --from=builder /bitcoin-cli /usr/bin/bitcoin-cli
 
 RUN useradd -ms /bin/bash ubuntu
 USER ubuntu
