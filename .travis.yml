@@ -19,7 +19,7 @@ before_script:
 
 script:
   - |
-    if [ "$TRAVIS_REPO_SLUG" != "BitcoinDeveloperNetwork/docker-omnicore" ] || [ "$TRAVIS_BRANCH" != "master" ]; then
+    if [ "$TRAVIS_REPO_SLUG" != "synonymdev/docker-omnicore" ] || [ "$TRAVIS_BRANCH" != "master" ]; then
       docker buildx build \
         --progress plain \
         --platform=linux/amd64,linux/arm/v7 \
@@ -31,6 +31,6 @@ script:
     docker buildx build \
       --progress plain \
       --platform=linux/amd64,linux/arm/v7 \
-      -t BitcoinDeveloperNetwork/omnicore:latest \
+      -t synonymsoft/omnicore:latest \
       --push \
       .

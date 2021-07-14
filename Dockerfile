@@ -10,8 +10,8 @@ RUN /scripts/install
 
 FROM debian:stable-slim
 
-COPY --from=builder /omnicored /usr/bin/omnicoded
-COPY --from=builder /omnicore-cli /usr/bin/omnicore-cli
+COPY --from=builder /omnicored /usr/bin/bitcoind
+COPY --from=builder /omnicore-cli /usr/bin/bitcoin-cli
 
 RUN useradd -ms /bin/bash ubuntu
 USER ubuntu
