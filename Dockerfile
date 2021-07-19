@@ -19,5 +19,5 @@ USER ubuntu
 EXPOSE 19001
 STOPSIGNAL SIGINT
 
-ENTRYPOINT ["omnicored"]
+ENTRYPOINT ["bitcoind"]
 CMD ["-datadir=/config"]
