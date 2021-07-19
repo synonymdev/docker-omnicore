@@ -1,6 +1,6 @@
 # Docker bitcoin
 
-Dockerfile of the public image [ghcr.io/vulpemventures/bitcoin:latest](https://github.com/orgs/vulpemventures/packages/container/package/bitcoin)
+Dockerfile of the public image [ghcr.io/synonymdev/docker-omnicore:latest](https://github.com/orgs/vulpemventures/packages/container/package/bitcoin)
 
 
 Pull the image:
